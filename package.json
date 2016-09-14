@@ -1,0 +1,31 @@
+{
+  "name": "react-stasis",
+  "version": "0.0.1",
+  "description": "Allow to render a static subtree on the server that will not cause reconiliation problems on the client without appropriate data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "static",
+    "subtree",
+    "server",
+    "dom"
+  ],
+  "author": "Dmitriy Kubyshkin <dmitriy@kubyshkin.name>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest-cli": "15.1.1",
+    "react": "15.3.1",
+    "react-dom": "15.3.1"
+  },
+  "peerDependencies": {
+    "react": ">= 15.0.0",
+    "react-dom": ">= 15.0.0"
+  },
+  "files": [
+    "index.js",
+    "server.js"
+  ]
+}
