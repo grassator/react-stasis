@@ -14,6 +14,7 @@
     "server",
     "dom"
   ],
+  "repository": "git@github.com:grassator/react-stasis.git",
   "author": "Dmitriy Kubyshkin <dmitriy@kubyshkin.name>",
   "license": "MIT",
   "devDependencies": {

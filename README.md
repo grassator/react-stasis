@@ -43,7 +43,7 @@ class MyApp extends Component {
 
 ### Fully Working Example
 
-To see a fully-working example, but which is really barebones (without a server-side framework or a bundler) you can take a look at the [example folder](./blob/master/example).
+To see a fully-working example, but which is really barebones (without a server-side framework or a bundler) you can take a look at the [example folder](https://github.com/grassator/react-stasis/tree/master/example).
 
 You can also clone this repo and then run:
 
