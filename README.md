@@ -41,6 +41,21 @@ class MyApp extends Component {
 }
 ```
 
+### Fully Working Example
+
+To see a fully-working example, but which is really barebones (without a server-side framework or a bundler) you can take a look at the [example folder](./blob/master/example).
+
+You can also clone this repo and then run:
+
+```bash
+npm install
+npm run example
+```
+
+and see how it works out in the browser.
+
+> You shouldn't use this example as a starting point for your React app — look at [react-create-app](https://github.com/facebookincubator/create-react-app) instead.
+
 ## Caveats
 
 * Using `react-stasis` just in the browser will result in an error.
