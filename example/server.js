@@ -1,4 +1,4 @@
-const app = require('./app');
+
 const stasisServer = require('../server');
 const fs = require('fs');
 
@@ -15,6 +15,8 @@ function serveJs(response, file) {
 
 //We need a function which handles requests and send response
 function handleRequest(request, response) {
+    delete require.cache[require.resolve('./app')];
+    const app = require('./app');
     if (request.url === '/app.js') {
         serveJs(response, 'app.js');
     } else if (request.url === '/react-stasis.js') {
@@ -27,13 +29,14 @@ function handleRequest(request, response) {
             'three'
         ])));
         response.write(
+            '</div>' +
             '<script src="https://unpkg.com/react@15.3.1/dist/react.js"></script>' +
             '<script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>' +
             '<script src="react-stasis.js"></script>' +
             '<script src="app.js"></script>' +
             '<script>ReactStasis.render(App(), document.getElementById("root"));</script>'
         );
-        response.end('</div></body></html>');
+        response.end('</body></html>');
     }
 }
 

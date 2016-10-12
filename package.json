@@ -1,6 +1,6 @@
 {
   "name": "react-stasis",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Allow to render a static subtree on the server that will not cause reconiliation problems on the client without appropriate data.",
   "main": "index.js",
   "scripts": {

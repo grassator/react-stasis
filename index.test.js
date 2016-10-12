@@ -1,5 +1,5 @@
 const _ = require('react').createElement;
-const {Static, render} = require('./index');
+const {Static, Portal, render} = require('./index');
 const server = require('./server');
 
 
@@ -37,5 +37,40 @@ describe('client', () => {
                 _(Static, null)
             ), root
         );
+    });
+
+    it('should support named portals', () => {
+        const root = document.createElement('div');
+        document.body.appendChild(root);
+        root.innerHTML = server.renderToString(
+            _('div', null,
+                _(Static, null,
+                    _('div', { className: 'wrapper' },
+                        _(Portal, { name: 'test' },
+                            _('span', null, 1)
+                        )
+                    )
+                )
+            )
+        );
+        render(
+            _('div', null,
+                _(Static, null,
+                    _(Portal, { name: 'test' },
+                        _('span', null, 21)
+                    )
+                )
+            ), root
+        );
+        render(
+            _('div', null,
+                _(Static, null,
+                    _(Portal, { name: 'test' },
+                        _('span', null, 42)
+                    )
+                )
+            ), root
+        );
+        expect(root.innerHTML).toContain('>42<')
     });
 });
